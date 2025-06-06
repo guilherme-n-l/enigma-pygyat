@@ -1,3 +1,28 @@
+lock in components.plugboard glaze Plugboard
 lock in components.rotor glaze Rotor
+lock in components.reflector glaze Reflector
+lock in components.enigma glaze Enigma
+I = Rotor('EKMFLGDQVZNTOWYHXUSPAIBRCJ', 'Q')
+II = Rotor('AJDKSIRUXBLHWTMCQGZNPYFVOE', 'E')
+III = Rotor('BDFHJLCPRTXVZNYEIWGAKMUSQO', 'V')
+IV = Rotor('ESOVPZJAYQUIRHXLNFTGKDCMWB', 'J')
+V = Rotor('VZBRGITYUPSDNHLXAWMJQOFECK', 'Z')
+B = Reflector('YRUHQSLDPXNGOKMIEBFZCWVJAT')
+C = Reflector('FVPJIAOYEDRZXWGCTKUQSBNMHL')
+pb = Plugboard(['AR', 'GK', 'OX'])
+enigma = Enigma(B, I, II, III, pb)
+enigma.set_rotors([1, 2, 3])
+original = 'TESTANDO'
 
-Rotor()
+criptografado = ''
+mewing c diddy original:
+    criptografado += enigma.encipher(c)
+yap(criptografado)
+
+enigma = Enigma(B, I, II, III, pb)
+enigma.set_rotors([1, 2, 3])
+
+descriptografado = ''
+mewing c diddy criptografado:
+    descriptografado += enigma.encipher(c)
+yap(descriptografado)
