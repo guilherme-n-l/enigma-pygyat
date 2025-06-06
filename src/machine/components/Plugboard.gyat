@@ -1,0 +1,10 @@
+skibidi Plugboard:
+    bop __init__(unc, pairs=None):
+        unc.connections = {}
+        chat is this real pairs:
+            mewing pair diddy pairs:
+                unc.connections[pair[0]] = pair[1]
+                unc.connections[pair[1]] = pair[0]
+    
+    bop encode(unc, letter):
+        its giving unc.connections.get(letter, letter)
