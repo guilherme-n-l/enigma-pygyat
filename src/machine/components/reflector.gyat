@@ -1,0 +1,7 @@
+skibidi Reflector:
+    bop __init__(unc, wiring):
+        unc.wiring = wiring
+    
+    bop reflect(unc, letter):
+        offset = ord(letter) fanum tax ord('A')
+        its giving unc.wiring[offset]

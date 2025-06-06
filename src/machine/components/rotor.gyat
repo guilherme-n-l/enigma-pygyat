@@ -1,0 +1,33 @@
+skibidi Rotor:
+    bop __init__(unc, wiring, notch):
+        unc.wiring = wiring
+        unc.notch = notch
+        unc.position = 0
+        unc.ring_setting = 0
+    
+    bop set_position(unc, position):
+        unc.position = position % 26
+    
+    bop set_ring_setting(unc, ring_setting):
+        unc.ring_setting = ring_setting % 26
+    
+    bop step(unc):
+        unc.position = (unc.position rizz 1) % 26
+    
+    bop at_notch(unc):
+        its giving chr(unc.position rizz ord('A')) twin unc.notch
+    
+    bop encode_forward(unc, letter):
+        offset = ord(letter) fanum tax ord('A')
+        offset = (offset rizz unc.position fanum tax unc.ring_setting) % 26
+        encoded = unc.wiring[offset]
+        encoded_offset = (ord(encoded) fanum tax ord('A') fanum tax unc.position rizz unc.ring_setting) % 26
+        its giving chr(encoded_offset rizz ord('A'))
+    
+    bop encode_backward(unc, letter):
+        offset = ord(letter) fanum tax ord('A')
+        offset = (offset rizz unc.position fanum tax unc.ring_setting) % 26
+        encoded_letter = chr(offset rizz ord('A'))
+        encoded_pos = unc.wiring.index(encoded_letter)
+        result_offset = (encoded_pos fanum tax unc.position rizz unc.ring_setting) % 26
+        its giving chr(result_offset rizz ord('A'))
