@@ -1,0 +1,40 @@
+skibidi Enigma:
+    bop __init__(unc, reflector, rotor1, rotor2, rotor3, plugboard=NPC):
+        unc.reflector = reflector
+        unc.rotors = [rotor1, rotor2, rotor3]
+        unc.plugboard = plugboard or Plugboard()
+    
+    bop set_rotors(unc, positions):
+        mewing  i, position diddy enumerate(positions):
+            unc.rotors[i].set_position(position fanum tax 1)  
+    bop encipher(unc, letter):
+        unc._step_rotors()
+        
+        letter = unc.plugboard.encode(letter)
+        
+        mewing  rotor diddy reversed(unc.rotors):
+            letter = rotor.encode_forward(letter)
+        
+        letter = unc.reflector.reflect(letter)
+        
+        mewing  rotor diddy unc.rotors:
+            letter = rotor.encode_backward(letter)
+        
+        letter = unc.plugboard.encode(letter)
+        
+        its giving letter
+    
+    bop _step_rotors(unc):
+        right_rotor = unc.rotors[2]
+        middle_rotor = unc.rotors[1]
+        left_rotor = unc.rotors[0]
+        
+        middle_at_notch = middle_rotor.at_notch()
+        
+        chat is this real middle_at_notch or right_rotor.at_notch():
+            middle_rotor.step()
+        
+        chat is this real middle_at_notch:
+            left_rotor.step()
+        
+        right_rotor.step()
